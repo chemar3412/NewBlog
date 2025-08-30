@@ -7,25 +7,31 @@ body {
 }
 
 /* Navigation Menu */
-nav {
-    background: #2c3e50;
-    padding: 1em;
-    text-align: center;
-}
-nav a {
-    color: #ecf0f1;
-    text-decoration: none;
-    margin: 0 1em;
-    font-weight: bold;
-    padding: 0.5em 1em;
-    transition: background 0.3s, color 0.3s;
-    animation: fadeIn 1s;
-}
-nav a:hover, nav a:focus {
-    background: #34495e;
-    color: #fff;
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
 }
 
+nav ul li {
+  margin-right: 1rem;
+}
+
+nav ul li a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: #333;
+  text-decoration: none;
+  background-color: transparent;
+  border-radius: 4px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+  background-color: #007bff;
+  color: #fff;
+}
 /* Layout */
 main {
     padding: 2em;
