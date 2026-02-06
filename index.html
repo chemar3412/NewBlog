@@ -1,20 +1,22 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chemar3412 Blog</title>
+    <title>Chemar3412 </title>
     <link href="styles.css" rel="stylesheet" >
 </head>
 <body>
   <nav>
   <ul>
     <li><a href="#">Home</a></li>
-    <li><a href="#">Blog</a></li>
+    <li><a href="#">Content</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
+  
 </nav>
     <main>
-        <h1 id="blog">Welcome to my sample blog</h1>
+        <h1 id="Content">Content Page</h1>
         <p>
             This is the first paragraph of the blog. Here, you can share your thoughts, experiences, or anything interesting that you want your readers to know. Blogging is a great way to express yourself and connect with others.
         </p>
@@ -47,5 +49,15 @@
     <footer>
         Student ID: Chemar3412 &copy; 2025
     </footer>
+    <script>
+        (function() {
+            const userName = prompt('What is your name?');
+            const displayName = userName && userName.trim() ? userName.trim() : 'Guest';
+            const header = document.getElementById('blog');
+            if (header) {
+                header.textContent = `Welcome to my Content Page, ${displayName}!`;
+            }
+        })();
+    </script>
 </body>
 </html>
