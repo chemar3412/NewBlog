@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,9 +12,9 @@
     <li><a href="#">Content</a></li>
     <li><a href="#">Contact</a></li>
   </ul>
-  
 </nav>
     <main>
+        <div id="welcomeMessage"></div>
         <h1 id="Content">Content Page</h1>
         <p>
             This is the first paragraph of the blog. Here, you can share your thoughts, experiences, or anything interesting that you want your readers to know. Blogging is a great way to express yourself and connect with others.
@@ -53,9 +52,11 @@
         (function() {
             const userName = prompt('What is your name?');
             const displayName = userName && userName.trim() ? userName.trim() : 'Guest';
-            const header = document.getElementById('blog');
-            if (header) {
-                header.textContent = `Welcome to my Content Page, ${displayName}!`;
+            
+            // Display welcome message on the page
+            const welcomeDiv = document.getElementById('welcomeMessage');
+            if (welcomeDiv) {
+                welcomeDiv.innerHTML = `<p style="background-color: #e8f4f8; padding: 15px; border-radius: 5px; font-size: 18px; font-weight: bold;"><span style="font-size: 24px;">👋</span> Welcome, ${displayName}! We're excited to have you here!</p>`;
             }
         })();
     </script>
