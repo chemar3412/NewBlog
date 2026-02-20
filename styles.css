@@ -172,16 +172,18 @@ input:checked + .slider:before {
 
 /* Dark Mode */
 .dark-mode {
-  background-color: #121212;
-  color: #f0f0f0;
+  background-color: #111;
+  color: #f5f5f5;
 }
 
-.dark-mode h1,
-.dark-mode h2,
-.dark-mode h3,
-.dark-mode p,
-.dark-mode li,
-.dark-mode a,
+.dark-mode nav,
+.dark-mode header,
+.dark-mode footer,
+.dark-mode section,
+.dark-mode .resourceBox,
+.dark-mode dropdown-content{ 
+    background-color: #1a1a1a;
+    color: #f5f5f5; }
 .dark-mode span,
 .dark-mode label {
   color: #f0f0f0;

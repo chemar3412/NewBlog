@@ -1,41 +1,52 @@
-window.onload = function () {
+wwindow.onload = function () {
 
+  // Count project items (will be 0 unless you add <ul><li> items)
   const count = document.querySelectorAll("#Projects ul li").length;
 
   const uniDiv = document.getElementById("UniversityResources");
   const personalDiv = document.getElementById("PersonalProject");
 
-  switch (count < 3) {
-    case true:
+  // Show/hide project sections based on count
+  if (uniDiv && personalDiv) {
+    if (count < 3) {
       uniDiv.style.display = "block";
       personalDiv.style.display = "block";
-      break;
-
-    case false:
+    } else {
       uniDiv.style.display = "none";
       personalDiv.style.display = "block";
-      break;
+    }
   }
 
+  // Skills list
   const skills = ["HTML", "JavaScript", "DevC++", "C#", "Python", "SQL"];
   const skillsList = document.getElementById("skillsList");
 
-  for (let i = 0; i < skills.length; i++) {
-    const li = document.createElement("li");
-    li.textContent = skills[i];
+
+
+  if(skillsList) {
+    skills.forEach(skill  {
+      const li = document.createElement("li");
+    li.textContent = skills;
     skillsList.appendChild(li);
+    });
   }
 };
 
+
 const toggleButton = document.getElementById("darkModeToggle");
-toggleButton.addEventListener("change", function () {
-  document.body.classList.toggle("dark-mode");
-});
+if (toggleButton) {
+  toggleButton.addEventListener("change", () -> {
+    document.body.classList.toggle("dark-mode");
+  });
+}
 
-const submitButton = document.getElementById("submitButton");
-submitButton.addEventListener("click", function (event) {
-  event.preventDefault();
+// Contact form submit button
+const submitButton = document.querySelector("button[type='submit']");
+if (submitButton) {
+  submitButton.addEventListener("click", function (event) {
+    event.preventDefault();
 
-  const name = document.getElementById("name").value;
-  alert("Thank you, " + name + ", your message has been sent!");
-});
+    const name = document.getElementById("name").value;
+    alert("Thank you, " + name + ", your message has been sent!");
+  });
+}

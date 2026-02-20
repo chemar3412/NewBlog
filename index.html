@@ -1,44 +1,104 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Chemar3412</title>
     <link href="styles.css" rel="stylesheet">
+
+    <style>
+        /* Center welcome box and headings */
+        #welcomeMessage { text-align: center; }
+        #welcomeMessage p { 
+            display: inline-block; 
+            margin: 0 0 1rem 0; 
+        }
+        #Content, #contact h2 { text-align: center; }
+
+        /* NavBar styling */
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav ul li {
+            float: left;
+            position: relative;
+        }
+        nav ul li a {
+            display: block;
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav ul li a:hover {
+            background-color: #575757;
+        }
+
+        /* Dropdown menu */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #444;
+            min-width: 160px;
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown-content a:hover {
+            background-color: #666;
+        }
+
+        /* Show dropdown on hover */
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Dark Mode Toggle -->
     <label class="switch">
         <input type="checkbox" id="darkModeToggle">
         <span class="slider"></span>
     </label>
     <span id="darkModeLabel">Dark Mode</span>
 
+    <!-- Navigation -->
     <nav>
         <ul>
-            <li><a href="#">About</a></li>
+            <li><a href="#About">About</a></li>
 
             <li class="dropdown">
                 <a href="#" class="dropbtn">Projects</a>
                 <div class="dropdown-content">
-                    <a href="#">Featured Content</a>
-                    <a href="#">Personal Projects</a>
+                    <a href="#UniversityResources">Featured Content</a>
+                    <a href="#PersonalProject">Personal Projects</a>
                 </div>
             </li>
 
-            <li><a href="#">Contact</a></li>
+            <li><a href="#Contact">Contact</a></li>
         </ul>
     </nav>
 
     <div id="welcomeMessage"></div>
 
     <main>
+        <!-- ABOUT SECTION -->
         <section id="About">
             <h2>About</h2>
 
             <div id="aboutme">
                 Welcome to my content page. My name is Chelsea Martin, and I'm currently pursuing my degree in Computer Information and Science. I'm 33 years old.
-                I couldn't be more blessed to have my 3 sons. I have a 10-year-old, an 8-year-old and 7-year-old.
+                I couldn't be more blessed to have my 3 sons. I have a 10-year-old, an 8-year-old, and a 7-year-old.
                 My boys are the reason why I'm finishing my degree to show them that you can do anything you put your mind to.
             </div>
 
@@ -48,6 +108,7 @@
             </div>
         </section>
 
+        <!-- PROJECTS SECTION -->
         <section id="Projects">
             <h1>Featured Content</h1>
 
@@ -63,6 +124,7 @@
             </div>
         </section>
 
+        <!-- CONTACT SECTION -->
         <section id="Contact">
             <h2>Contact</h2>
 
@@ -74,4 +136,44 @@
 
                 <div>
                     <label for="email">Email *</label>
-                   
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <div>
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" name="subject">
+                </div>
+
+                <div>
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        Student ID: Chemar3412 &copy; 2025
+    </footer>
+
+    <!-- Welcome Message Script -->
+    <script>
+        window.onload = function () {
+            const userName = prompt('What is your name?');
+            const displayName = userName && userName.trim() ? userName.trim() : 'Guest';
+
+            const welcomeDiv = document.getElementById('welcomeMessage');
+            if (welcomeDiv) {
+                welcomeDiv.innerHTML = `
+                    <p style="background-color: #e8f4f8; padding: 15px; border-radius: 5px; font-size: 18px; font-weight: bold;">
+                        <span style="font-size: 24px;">👋</span> Welcome, ${displayName}! We're excited to have you here!
+                    </p>`;
+            }
+        };
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
