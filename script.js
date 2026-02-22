@@ -7,7 +7,7 @@ if (userName && userName.trim() !== "") {
 }
 
 // Skills Array + Loop
-const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub"];
+const skills = ["HTML", "JavaScript", "DevC++", "C#", "Python", "SQL"]
 const skillsList = document.getElementById("skillsList");
 
 skills.forEach(skill => {
