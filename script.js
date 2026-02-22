@@ -23,22 +23,33 @@ wwindow.onload = function () {
 
 
 
-  if(skillsList) {
-    skills.forEach(skill  {
-      const li = document.createElement("li");
+  if (skillsList) {
+  skills.forEach(skills => {
+    const li = document.createElement("li");
     li.textContent = skills;
     skillsList.appendChild(li);
-    });
-  }
-};
-
-
-const toggleButton = document.getElementById("darkModeToggle");
-if (toggleButton) {
-  toggleButton.addEventListener("change", () -> {
-    document.body.classList.toggle("dark-mode");
   });
 }
+
+function toggleDarkMode() {
+  document.documentElement.classList.toggle('night-theme');
+
+  document.querySelectorAll('.color-flip').forEach(item => {
+    item.classList.toggle('flip-color');
+  });
+}
+
+// Click toggles dark mode
+document.getElementById('darkModeToggle')
+  .addEventListener('click', toggleDarkMode);
+
+// Pressing Enter toggles dark mode
+document.addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    toggleDarkMode();
+  }
+});
+
 
 // Contact form submit button
 const submitButton = document.querySelector("button[type='submit']");
@@ -50,3 +61,5 @@ if (submitButton) {
     alert("Thank you, " + name + ", your message has been sent!");
   });
 }
+}
+
