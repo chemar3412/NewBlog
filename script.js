@@ -1,65 +1,93 @@
-window.onload = function () {
+// Prompt user for their name
+const userName = prompt("Welcome! What's your name?");
+const welcomeMessage = document.getElementById("welcomeMessage");
 
-  /* -----------------------------
-     PROJECT COUNT LOGIC
-  ----------------------------- */
-  const count = document.querySelectorAll("#Projects ul li").length;
+if (userName && userName.trim() !== "") {
+    welcomeMessage.textContent = "Welcome, " + userName + "!";
+}
 
-  const uniDiv = document.getElementById("UniversityResources");
-  const personalDiv = document.getElementById("PersonalProject");
+// Skills Array + Loop
+const skills = ["HTML", "CSS", "JavaScript", "Git", "GitHub"];
+const skillsList = document.getElementById("skillsList");
 
-  if (uniDiv && personalDiv) {
-    if (count < 3) {
-      uniDiv.style.display = "block";
-      personalDiv.style.display = "block";
-    } else {
-      uniDiv.style.display = "none";
-      personalDiv.style.display = "block";
-    }
-  }
+skills.forEach(skill => {
+    const li = document.createElement("li");
+    li.textContent = skill;
+    skillsList.appendChild(li);
+});
 
-  /* -----------------------------
-     SKILLS LIST
-  ----------------------------- */
-  const skills = ["HTML", "JavaScript", "DevC++", "C#", "Python", "SQL"];
-  const skillsList = document.getElementById("skillsList");
+// Featured Content Logic
+const projectCount = document.querySelectorAll("#projectList li").length;
+const uniDiv = document.getElementById("UniversityResources");
+const personalDiv = document.getElementById("PersonalProjects");
 
-  if (skillsList) {
-    skills.forEach(skill => {
-      const li = document.createElement("li");
-      li.textContent = skill;
-      skillsList.appendChild(li);
-    });
-  }
+if (projectCount < 3) {
+    uniDiv.style.display = "block";
+    personalDiv.style.display = "block";
+} else {
+    uniDiv.style.display = "none";
+    personalDiv.style.display = "block";
+}
 
-  /* -----------------------------
-     DARK MODE TOGGLE
-  ----------------------------- */
-  function darkMode() {
-    document.documentElement.classList.toggle("night-theme");
+// Dark Mode Toggle
+const toggleButton = document.getElementById("darkModeToggle");
+toggleButton.addEventListener("change", function () {
+    document.body.classList.toggle("dark-mode");
+});
 
-    document.querySelectorAll(".color-flip").forEach(item => {
-      item.classList.toggle("flip-color");
-    });
-  }
+// ------------------------------
+// DYNAMIC DOM CREATION
+// ------------------------------
 
-  const darkToggle = document.getElementById("darkMode");
-  if (darkToggle) {
-    darkToggle.addEventListener("click", darkMode);
-  }
+// Add new paragraph to Projects section
+const newProjectParagraph = document.createElement("p");
+newProjectParagraph.textContent =
+    "Recently, I completed a JavaScript-based portfolio enhancement project focusing on DOM manipulation and user interaction.";
+document.getElementById("projects").appendChild(newProjectParagraph);
 
-  /* -----------------------------
-     CONTACT FORM SUBMISSION
-  ----------------------------- */
-  const submit = document.querySelector("button[type='submit']");
-  if (submit) {
-    submit.addEventListener("click", (event) => {
-      event.preventDefault();
+// Delayed notification banner
+setTimeout(() => {
+    const note = document.createElement("div");
+    note.textContent = "✨ New content has been added to the site!";
+    note.style.background = "#ffeb3b";
+    note.style.padding = "10px";
+    note.style.textAlign = "center";
+    note.style.fontWeight = "bold";
+    note.style.borderBottom = "2px solid #333";
+    document.body.prepend(note);
+}, 3000);
 
-      const name = document.getElementById("name").value.trim();
-      const displayName = name || "Guest";
+// Modify existing elements
+const aboutHeading = document.querySelector("#about h2");
+aboutHeading.textContent = "About Me (Updated)";
+aboutHeading.style.color = "#0077cc";
 
-      alert(`Thank you, ${displayName}, your message has been sent!`);
-    });
-  }
-};
+const featuredSection = document.getElementById("featured");
+featuredSection.style.background = "#e8f4ff";
+featuredSection.style.padding = "25px";
+featuredSection.style.borderRadius = "8px";
+
+// ------------------------------
+// TIMED FORM CONFIRMATION
+// ------------------------------
+
+const submitButton = document.getElementById("submitButton");
+
+submitButton.addEventListener("click", function(event) {
+    event.preventDefault();
+
+    const name = document.getElementById("senderName").value;
+
+    // Create loading message
+    const loadingMsg = document.createElement("p");
+    loadingMsg.textContent = "Sending message...";
+    loadingMsg.style.fontWeight = "bold";
+    loadingMsg.style.color = "orange";
+    document.getElementById("contact").appendChild(loadingMsg);
+
+    // Replace with confirmation after delay
+    setTimeout(() => {
+        loadingMsg.textContent = "Message sent successfully! Thank you, " + name + "!";
+        loadingMsg.style.color = "green";
+    }, 2000);
+});

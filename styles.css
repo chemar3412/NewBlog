@@ -2,256 +2,82 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-}
-
-/* Navigation Menu */
-nav {
-    background-color: #333;
-}
-
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-nav ul li {
-  margin-right: 1rem;
-}
-
-nav ul li a {
-  display: block;
-  padding: 0.5rem 1rem;
-  color: white;
-  text-decoration: none;
-  background-color: transparent;
-  border-radius: 4px;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-nav ul li a:hover {
-  background-color: #575757;
-  color: white;
-}
-
-/* Dropdown */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: white;
-  min-width: 160px;
-  z-index: 1;
-  border-radius: 4px;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {
-  background-color: purple;
-}
-
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Layout */
-main {
-    padding: 2em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2em;
-}
-
-section {
-    background: #f4f4f4;
-    padding: 1em 2em;
-    margin: 2em 0;
-    width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    animation: fadeIn 1s;
-}
-
-/* Contact Form */
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.contact-form label {
-    margin-bottom: 0.3em;
-    font-weight: bold;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.7em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    transition: border-color 0.3s, background-color 0.3s;
-    font-size: 1em;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus,
-.contact-form input:hover,
-.contact-form textarea:hover {
-    border-color: #2c3e50;
-    background-color: #eaf0fb;
-}
-
-.contact-form button[type="submit"] {
-    background: #2c3e50;
-    color: #ecf0f1;
-    border: none;
-    padding: 0.8em 1.5em;
-    border-radius: 4px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.contact-form button[type="submit"]:hover {
-    background: #34495e;
-}
-
-/* Toggle Switch */
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 50px;
-    height: 24px;
-    margin: 20px;
-}
-
-.switch input {
-    display: none;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    background-color: #ccc;
-    border-radius: 24px;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transition: .4s;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 18px;
-    width: 18px;
-    left: 3px;
-    bottom: 3px;
-    background-color: white;
-    border-radius: 50%;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #2c3e50;
-}
-
-input:checked + .slider:before {
-    transform: translateX(26px);
+    background: #f5f5f5;
+    color: #222;
+    transition: background 0.3s, color 0.3s;
 }
 
 /* Dark Mode */
 .dark-mode {
-  background-color: #1e1e1e;
-  color: #f5f5f5;
+    background: #111;
+    color: #eee;
 }
 
-.dark-mode nav,
-.dark-mode header,
-.dark-mode footer,
-.dark-mode section,
-.dark-mode .resourceBox,
-.dark-mode dropdown-content{ 
-    background-color: #1e1e1e;
-    color: #f5f5f5; }
-.dark-mode span,
-.dark-mode label {
-  color: #1e1e1e;
-}
-
-.dark-mode nav {
-  background-color: #1e1e1e;
-}
-
-.dark-mode nav a {
-  color:white;
-}
-
-.dark-mode .dropdown-content {
-  background-color: #1e1e1e;
-  border: 1px solid #333;
-}
-
-.dark-mode .dropdown-content a:hover {
-  background-color: #1e1e1e;
-}
-
-.dark-mode #About,
-.dark-mode #Projects,
-.dark-mode #Contact {
-  background-color: #1a1a1a;
-  border-color: #444;
-}
-
-/* Footer */
-footer {
-    background: #2c3e50;
-    color: #ecf0f1;
+header {
+    background: #333;
+    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 1em 0;
-    margin-top: 2em;
-    animation: fadeIn 1s;
 }
 
-/* Animation */
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
+nav {
+    background: #444;
+    padding: 10px;
+    text-align: center;
 }
 
-/* Responsive */
-@media (max-width: 767px) {
-    main {
-        flex-direction: column;
-        gap: 1em;
-    }
-    section {
-        margin: 1em 0;
-        max-width: 100%;
-        padding: 1em;
-    }
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
-    main {
-        flex-direction: row;
-        flex-wrap: wrap;
-        gap: 2em;
-        justify-content: center;
-    }
-    section {
-        max-width: 45%;
-    }
+section {
+    padding: 20px;
+}
+
+.projects img,
+.personal-projects img {
+    width: 200px;
+    height: 120px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 6px;
+}
+
+.featured-box {
+    border: 2px solid #333;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+}
+
+.dark-mode .featured-box {
+    border-color: #eee;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+}
+
+form button {
+    padding: 10px 20px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background: #555;
+}
+
+.dark-toggle {
+    margin: 15px;
+    text-align: center;
 }
 
 @media (min-width: 1025px) {

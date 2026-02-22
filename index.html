@@ -1,208 +1,102 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Chemar3412</title>
-    <link href="styles.css" rel="stylesheet">
-
-    <style>
-        /* Center welcome box and headings */
-        #welcomeMessage {
-            text-align: center;
-        }
-
-        #Content,
-        #contact h2 {
-            text-align: center;
-        }
-
-        /* NavBar styling */
-        nav {
-            background-color: white;
-            overflow: hidden;
-        }
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul::after {
-            content: "";
-            display: block;
-            clear: both;
-        }
-
-        nav ul li {
-            float: left;
-            position: relative;
-        }
-
-        nav ul li a {
-            display: block;
-            color: rgb(8, 1, 1);
-            padding: 14px 20px;
-            text-decoration: none;
-        }
-
-        nav ul li a:hover {
-            background-color: purple;
-            color: white;
-        }
-
-        /* Dropdown menu */
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: rgb(214, 83, 228);
-            min-width: 160px;
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            color: white;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-            text-align: left;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #8a1c96;
-        }
-
-        /* Show dropdown on hover */
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-
-        /* Welcome box styling */
-        .welcome-box {
-            background-color: #e8f4f8;
-            padding: 15px;
-            border-radius: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            display: inline-block;
-        }
-
-        /* Section spacing */
-        section {
-            padding: 40px 20px;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <!-- Dark Mode Toggle -->
-    <label class="switch">
-        <input type="checkbox" id="darkMode">
-        <span class="slider"></span>
-    </label>
-    <span id="darkModeLabel">Dark Mode</span>
 
-    <!-- Navigation -->
+    <header>
+        <h1 id="welcomeMessage">Welcome!</h1>
+    </header>
+
+    <!-- DARK MODE TOGGLE -->
+    <div class="dark-toggle">
+        <label>
+            <input type="checkbox" id="darkModeToggle">
+            Dark Mode
+        </label>
+    </div>
+
     <nav>
-        <ul>
-            <li><a href="#About">About</a></li>
-
-            <li class="dropdown">
-                <a href="#" class="dropbtn">Projects</a>
-                <div class="dropdown-content">
-                    <a href="#UniversityResources">Featured Content</a>
-                    <a href="#PersonalProject">Personal Projects</a>
-                </div>
-            </li>
-
-            <li><a href="#Contact">Contact</a></li>
-        </ul>
+        <a href="#about">About</a>
+        <a href="#featured">Featured Content</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
     </nav>
 
-    <div id="welcomeMessage"></div>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hi! I'm a passionate developer who loves building creative, functional, and meaningful projects.
+            I enjoy learning new technologies, solving problems, and turning ideas into reality.
+        </p>
 
-    <main>
-        <!-- ABOUT SECTION -->
-        <section id="About">
-            <h2>About</h2>
+        <h3>My Skills</h3>
+        <ul id="skillsList"></ul>
+    </section>
 
-            <div id="aboutme">
-                Welcome to my content page. My name is Chelsea Martin, and I'm currently pursuing my degree in Computer Information and Science. I'm 33 years old.
-                I couldn't be more blessed to have my 3 sons. I have a 10-year-old, an 8-year-old, and a 7-year-old.
-                My boys are the reason why I'm finishing my degree to show them that you can do anything you put your mind to.
-            </div>
+    <!-- FEATURED CONTENT SECTION -->
+    <section id="featured">
+        <h2>Featured Content</h2>
 
-            <div id="skillsSection">
-                <h2>Skills</h2>
-                <ul id="skillsList"></ul>
-            </div>
-        </section>
+        <div id="UniversityResources" class="featured-box">
+            <h3>University Resources</h3>
+            <a href="https://www.ecpi.edu" target="_blank">ECPI University Homepage</a>
+        </div>
 
-        <!-- PROJECTS SECTION -->
-        <section id="Projects">
-            <h2>Featured Content</h2>
+        <div id="PersonalProjects" class="featured-box personal-projects">
+            <h3>Personal Projects</h3>
 
-            <div id="UniversityResources" class="resourceBox">
-                <h2>University Resources</h2>
-                <a href="https://www.ecpi.edu/programs/data-analytics-bachelor-degree" target="_blank">
-                    Data Analytics Degree Track
-                </a>
-            </div>
+            <a href="https://github.com/yourusername/projectA" target="_blank">
+                <img src="https://via.placeholder.com/200x120" alt="Project A">
+            </a>
 
-            <div id="PersonalProject" class="resourceBox">
-                <h2>Personal Projects</h2>
-            </div>
-        </section>
+            <a href="https://github.com/yourusername/projectB" target="_blank">
+                <img src="https://via.placeholder.com/200x120" alt="Project B">
+            </a>
 
-        <!-- CONTACT SECTION -->
-        <section id="Contact">
-            <h2>Contact</h2>
+            <a href="https://github.com/yourusername/projectC" target="_blank">
+                <img src="https://via.placeholder.com/200x120" alt="Project C">
+            </a>
+        </div>
+    </section>
 
-            <form class="contact-form">
-                <div>
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="projects">
+        <h2>My Projects</h2>
 
-                <div>
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
+        <ul id="projectList">
+            <li>Project One</li>
+            <li>Project Two</li>
+            <!-- Add or remove items to test the logic -->
+        </ul>
+    </section>
 
-                <div>
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject">
-                </div>
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+        <h2>Contact Me</h2>
 
-                <div>
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
+        <form>
+            <label>Your Name</label>
+            <input type="text" id="senderName" placeholder="Enter your name">
 
-                <button type="submit">Submit</button>
-            </form>
-        </section>
-    </main>
+            <label>Email Address</label>
+            <input type="email" id="email" placeholder="Enter your email">
 
-    <footer>
-        Student ID: Chemar3412 &copy; 2025
-    </footer>
+            <label>Subject</label>
+            <input type="text" id="subject" placeholder="Subject">
 
-    <!-- Welcome Message Script -->
-    <script>
-        window.onload = function () {
-            const userName = prompt('What is your name?');
-            const displayName = userName && userName.trim() ? userName.trim() : 'Guest';
+            <label>Message</label>
+            <textarea id="message" rows="5" placeholder="Write your message"></textarea>
 
-            const welcomeDiv = document.getElementById('welcomeMessage');
-            if (welcomeDiv) {
-                welcomeDiv.innerHTML = `
-                    <p class="welcome-box">
-                        👋 Welcome, ${displayName}! We're excited to have you here!
-                    </p>`;
-            }
-        };
-    </script>
+            <button id="submitButton" type="submit">Submit</button>
+        </form>
+    </section>
 
     <script src="script.js"></script>
 </body>
