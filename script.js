@@ -18,48 +18,42 @@ wwindow.onload = function () {
   }
 
   // Skills list
-  const skills = ["HTML", "JavaScript", "DevC++", "C#", "Python", "SQL"];
-  const skillsList = document.getElementById("skillsList");
+const skills = ["HTML", "JavaScript", "DevC++", "C#", "Python", "SQL"];
+const skillsList = document.getElementById("skillsList");
 
+if (skillsList) {
+  skills.forEach(skill => {
+    console.log(skill);
 
-
-  if (skillsList) {
-  skills.forEach(skills => {
     const li = document.createElement("li");
-    li.textContent = skills;
+    li.textContent = skill;
     skillsList.appendChild(li);
   });
 }
 
-function toggleDarkMode() {
+function darkMode() {
   document.documentElement.classList.toggle('night-theme');
 
-  document.querySelectorAll('.color-flip').forEach(item => {
+  document.querySelectorAll('.color-flip').forEach((item)=> {
     item.classList.toggle('flip-color');
   });
 }
 
-// Click toggles dark mode
-document.getElementById('darkModeToggle')
-  .addEventListener('click', toggleDarkMode);
+document.getElementById('darkMode')
+  .addEventListener('click', darkMode);
 
-// Pressing Enter toggles dark mode
-document.addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    toggleDarkMode();
-  }
-});
+
 
 
 // Contact form submit button
-const submitButton = document.querySelector("button[type='submit']");
-if (submitButton) {
-  submitButton.addEventListener("click", function (event) {
-    event.preventDefault();
+const submit = document.querySelector("button[type='submit']");
+if (submit) {
+  submit.addEventListener("click", (event) => {
+      event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    alert("Thank you, " + name + ", your message has been sent!");
-  });
+      const name = document.getElementById("name").value;
+      alert("Thank you, " + name + ", your message has been sent!");
+    });
 }
 }
 
