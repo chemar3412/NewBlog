@@ -8,10 +8,13 @@
 </head>
 
 <body>
-
-    <header>
-        <h1 id="welcomeMessage">Welcome!</h1>
-    </header>
+    <div id="welcomeModal" class="modal-overlay">
+        <div class="modal-box">
+            <h2>Welcome!</h2>
+            <p> This page is a work in progress.</p>
+            <button id="closeModalBtn">Close</button>
+        </div>
+    </div>
 
     <!-- DARK MODE TOGGLE -->
     <div class="dark-toggle">
@@ -94,7 +97,9 @@
             <label>Message</label>
             <textarea id="message" rows="5" placeholder="Write your message"></textarea>
 
-            <button id="submitButton" type="submit">Submit</button>
+            <button id="submitButton" class="tooltip"> Submit
+                <span class="tooltip-text">Click to send your message!</span>
+            </button>
         </form>
     </section>
 

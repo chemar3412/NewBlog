@@ -1,10 +1,6 @@
-// Prompt user for their name
-const userName = prompt("Welcome! What's your name?");
-const welcomeMessage = document.getElementById("welcomeMessage");
-
-if (userName && userName.trim() !== "") {
-    welcomeMessage.textContent = "Welcome, " + userName + "!";
-}
+document.getElementById("closeModalBtn").addEventListener("click", () => {
+    document.getElementById("welcomeModal").style.display="none";
+});
 
 // Skills Array + Loop
 const skills = ["HTML", "JavaScript", "DevC++", "C#", "Python", "SQL"]
@@ -35,6 +31,22 @@ toggleButton.addEventListener("change", function () {
     document.body.classList.toggle("dark-mode");
 });
 
+const darkToggle = document.getElementById("darkModeToggle");
+const savedMode = localStorage.getItem("darkMode");
+
+if(savedMode === "enabled"){
+    document.body.classList.add("dark-mode");
+    darkToggle.checked = true;
+}
+darkToggle.addEventListener("change", () => {
+    if(darkToggle.checked){
+        document.body.classList.add("dark-mode");
+        localStorage.setItem("darkMode", "enabled");
+    } else {
+        document.body.classList.remove("dark-mode");
+        localStorage.setItem("darkMode", "disabled");
+    }
+});
 // ------------------------------
 // DYNAMIC DOM CREATION
 // ------------------------------
